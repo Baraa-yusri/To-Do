@@ -1,0 +1,17 @@
+
+version: ''
+services:
+  todo_db:
+    container_name: todo_db
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
+  
+    networks:
+      - todo_init
+    
+networks:
+  todo_init:
